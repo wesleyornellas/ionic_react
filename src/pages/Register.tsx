@@ -16,7 +16,7 @@ const Register: React.FC = () => {
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Example of fucking world!</IonTitle>
+            <IonTitle>Register</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
@@ -36,6 +36,9 @@ const Register: React.FC = () => {
               <p>
                   Already have a account? <Link to="/login">Login</Link>
               </p>
+              <p>
+                Back to <Link to="/">home</Link>
+            </p>
         </IonContent>
       </IonPage>
     );

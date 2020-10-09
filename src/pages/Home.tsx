@@ -1,7 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonAvatar, IonLabel, IonItemOption, IonItemSliding, IonItemOptions, IonButton, IonIcon, IonInput } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonAvatar, IonLabel, IonItemOption, IonItemSliding, IonItemOptions, IonButton, IonIcon } from '@ionic/react';
 import React from 'react';
 import './Home.css';
-import { star, skull } from 'ionicons/icons'
+import { star, skull, notifications } from 'ionicons/icons'
 
 const arr = [
   {
@@ -19,7 +19,7 @@ const arr = [
 
 ]
 
-const Home: React.FC = () => {
+const Home: React.FC = () => {  
 
   return (
     <IonPage>
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
             <IonItemSliding key={elem.name}>
               <IonItem>
                 <IonAvatar>
-                  <img src={`https://ionicframework.com/docs/demos/api/list/avatar-${elem.name.toLocaleLowerCase()}.png`} />
+                  <img src={`https://ionicframework.com/docs/demos/api/list/avatar-${elem.name.toLocaleLowerCase()}.png`} alt="Avatar" />
                 </IonAvatar>
                 <IonLabel className="ion-padding">
                   <h2>{elem.name}</h2>
@@ -42,8 +42,11 @@ const Home: React.FC = () => {
                   <p>Some helper text!</p>
                 </IonLabel>
               </IonItem>
+              <IonItemOptions side="start">
+                <IonItemOption onClick={() => alert('pressed ok')}>OK</IonItemOption>
+              </IonItemOptions>
               <IonItemOptions side="end">
-                <IonItemOption onClick={() => alert('pressed delete')}>Delete</IonItemOption>
+                <IonItemOption color="danger" onClick={() => alert('pressed delete')}>Delete</IonItemOption>
               </IonItemOptions>
             </IonItemSliding>
           ))}
@@ -55,6 +58,10 @@ const Home: React.FC = () => {
         <IonButton expand="full" color="secondary" routerLink="/register">
           <IonIcon slot="end" icon={skull}></IonIcon>
           Register
+        </IonButton>
+        <IonButton expand="full" color="tertiary" routerLink="/notifications">
+          <IonIcon slot="end" icon={notifications}></IonIcon>
+          Notifications
         </IonButton>
       </IonContent>
     </IonPage>

@@ -15,7 +15,7 @@ const Login: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Example of fucking world!</IonTitle>
+          <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -30,6 +30,9 @@ const Login: React.FC = () => {
             <IonButton onClick={loginUser}>Login</IonButton>
             <p>
                 New here? <Link to="/register">Register</Link>
+            </p>
+            <p>
+                Back to <Link to="/">home</Link>
             </p>
       </IonContent>
     </IonPage>
